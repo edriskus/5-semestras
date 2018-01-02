@@ -68,6 +68,13 @@
 
 ### Siūlomi optimizacijos algoritmo žingsniai
 
+1. Pagal 1 taisyklę vieną SELECT išskaidyti į kelias – bus daugiau laisvės.
+2. Pagal 2, 4, 6, 10 (SELECT komutatyvumas) SELECT nuleisti medžiu kaip galima žemyn (į lapus)
+3. Pagal 9 pastumti griežčiausią SELECT (duodančią mažiausią rezultatą pagal įrašus ar bendrą dydį) kuo arčiau vykdymo pradžios.
+4. X derinti su išrinkimo sąlyga (kad atitiktu JOIN)
+5. Pagal 3, 4, 7, 11 nustumti projekcijos kintamuosius kaip galima arčiau vykdymo pradžios (žemyn į lapus)
+6. Išskirti šakų grupes, kurios galėtų būti vykdomos vienu algoritmu.
+
 ---
 
 ### Reliacinė algebra
