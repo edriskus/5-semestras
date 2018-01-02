@@ -1,12 +1,12 @@
 # FMISB15517 Duomenų bazių valdymas
 
-1. [SQL užklausų apdorojimas](#ch1-sql-apdorojimas)
-2. [Išskirstytos duomenų bazės](#ch2-isskirstytos-db)
-3. [Transakcijos](#ch3-transakcijos)
-4. [Duomenų bazės fiziniame lygmenyje](#ch4-db-fiziniame-lygmenyje)
-5. [Duomenų bazės įrašai](#ch5-db-irasai)
+1. [SQL užklausų apdorojimas](#SQL-užklausų-apdorojimas)
+2. [Išskirstytos duomenų bazės](#Išskirstytos-duomenų-bazės)
+3. [Transakcijos](#Transakcijos)
+4. [Duomenų bazės fiziniame lygmenyje](#Duomenų-bazės-fiziniame-lygmenyje)
+5. [Duomenų bazės įrašai](#Duomenų-bazės-įrašai)
 
-## [SQL užklausų apdorojimas](#ch1-sql-apdorojimas)
+## [SQL užklausų apdorojimas](#SQL-užklausų-apdorojimas)
 
 - **Sistemos katalogas** - objektų rinkinys, saugantis informaciją apie kitus DB esančius objektus ir DB struktūrą.
 
@@ -127,7 +127,7 @@
 
 <hr>
 
-## [Išskirstytos duomenų bazės](#ch2-isskirstytos-db)
+## [Išskirstytos duomenų bazės](#Išskirstytos-duomenų-bazės)
 
 - **Išskirstytoji duomenų bazė** – tai duomenų rinkinys, logiškai priklausantis tai pačiai duomenų bazei, bet fiziškai saugomas skirtingose vietose, t.y. mazguose, sujungtuose kompiuterių tinklu
 - **Šliuzai** (Gateways) – duomenų mainams paruošiamos nesudėtingos procedūros, nėra tarp šaltinių sąveikos kaip vieningoje DBVS
@@ -226,7 +226,7 @@
 - Kai yra visiška autonomija, bazė vadinama **federacine** ar **multibazine** (kiekviena dalis turi savo vartotojus, ir tik kai kurie duomenys imami iš kito serverio).
 <hr>
 
-## [Transakcijos](#ch3-transakcijos)
+## [Transakcijos](#Transakcijos)
 - Kai dirbama iš karto keliomis programomis, galimi keli režimai:
     - **Pakaitinis** (procesorius vienas, dalija savo laika skirtingoms užduotims, pvz., kol vyksta skaitymas iš disko, gali dirbti kitus darbus) - **nagrinėjame šitą**
     - Vienalaikis (keli procesoriai tvarkosi tuo pat metu su skirtingomis užduotimis)
@@ -289,10 +289,10 @@
 
 <hr>
 
-## [Duomenų bazės fiziniame lygmenyje](#ch4-db-fiziniame-lygmenyje)
+## [Duomenų bazės fiziniame lygmenyje](#Duomenų-bazės-fiziniame-lygmenyje)
 
 <hr>
 
-## [Duomenų bazės įrašai](#ch5-db-irasai)
+## [Duomenų bazės įrašai](#Duomenų-bazės-įrašai)
 
 <hr>
