@@ -221,6 +221,65 @@
 <hr>
 
 ## Transakcijos
+- Kai dirbama iš karto keliomis programomis, galimi keli režimai:
+    - **Pakaitinis** (procesorius vienas, dalija savo laika skirtingoms užduotims, pvz., kol vyksta skaitymas iš disko, gali dirbti kitus darbus) - **nagrinėjame šitą**
+    - Vienalaikis (keli procesoriai tvarkosi tuo pat metu su skirtingomis užduotimis)
+- **Transakcija** - atomiška procedūra ar užduoties dalis (gali būti įvykdyta pilnai arba neturi būti įvykdyta išvis).
+- Sistema, atlikdama transakciją, garantuoja, kad:
+    - Sėkmės atveju pakeisti duomenys bus negrįžtamai įrašyti
+    - Nesėkmės atveju nebus įtakos kitoms transakcijoms ir duomenys liks nepaliesti
+
+### Galimos problemos
+
+- **Prarastas duomenų atnaujinimas**
+<br>*vienas vartotojas įrašą nuskaito ir ilgai jį apdoroja, tuo tarpu kitas per tą laiką įrašą spėja atnaujinti*
+
+- **Klaidingas sumavimas**
+<br>*atliekama grupavimo funkcija, tačiau tuo tarpu atnaujinami keli įrašai. Funkcija bus suskaičiuota, panaudojant dalį atnaujintų duomenų, dalį – dar nespėtų atnaujinti*
+
+- **Nešvarus skaitymas**
+<br>*duomenys buvo įrašyti laikinai (tarpiniai), bet dėl trykio transakcija lūžo. Kitas vartotojas nuskaito duomenis, nespėjus atstatyti duomenų į pradinį (švarį) būvį, kadangi blokas su pakeistais duomenimis yra atmintyje*
+
+- **Neatsikartojantis dvigubas skaitymas**
+<br>*Jei transakcija reikalauja tą patį įrašą nuskaityti keletą kartų, o po pirmojo skaitymo kita transakcija įrašą pakeitė, tai antrą kartą nuskaitytas tas pats įrašas nebebus toks pat.*
+
+
+### Lūžių priežastys
+
+1. Aparatinės įrangos trykiai
+2. Sistemos ar transakcijos trykiai *(/0, integer overflow, etc..)*
+3. Lokalios klaidos *(pvz. nerasti reikalingi duomenys)* 
+4. Transakcija priverstinai nutraukta *(kontrolės mechanizmas neleidžia)*
+5. Kietojo disko gedimai *(prarandami atminties blokai)*
+6. *Force majeure* - gamtos katastrofa, pasaulio pabaiga ir pan.
+
+### Transakcijos vykdymas
+
+- `BEGIN_TRANSACTION` – žymi loginę transakcijos pradžią;
+- `READ` arba `WRITE` – duomenų nuskaitymas ir keitimas;
+- `END_TRANSACTION` – žymi loginę transakcijos pabaigą, bet reikia dar patikrinti, kaip sėkmingai ji baigėsi, ar galima duomenis išsaugoti negrįžtamai;
+- `COMMIT_TARNSACTION` – žymi sėkmingą transakcijos įvykdymą, duomenys gali būti atnaujinti negrįžtamai;
+- `ROLLBACK` arba `ABORT` –žymi nesėkmingą baigtį. Reikia atstatyti pakeitimus į pradinį būseną.
+
+<br>
+
+- `UNDO` panaši į `ROLLBACK`, tačiau atšaukia ne visą transakciją, o tik paskutinį veiksmą;
+- `REDO` nurodo, kad tam tikros operacijos turi būti atliktos pakartotinai, kad būtų galima įsitikinti sėkminga transakcijos baigtimi (visi duomenys tikrai gerai atnaujinti).
+
+<br>
+
+- Dalinai baigta transakcija (ang. **partially committed**) dar nebaigta, gali reikėti papildomų testų, ar tikrai viskas gerai, ar nėra interferencijos su kitomis transakcijomis.
+- Transakcija užbaigta (ang. **terminated**) – tai būsena, kuri rodo, kad transakcija yra šalinama iš sistemos su kažkokia baigtimi.
+
+### Error log
+
+- Tam, kad avarijos atveju būtų galima atstatyti pradinį būvį, sistema veda žurnalą, kuris saugomas diske, t.y. 1- 4 trykių atvejais informacija jame lieka.
+- Galimi įrašai žurnale (T – transakcijos ID):
+    - \[start_transaction, T\]
+    - \[write_item, T, X, old_value, new_value\] –kai pakeistas įrašas X
+    - \[read_item, T, X\]
+    - \[commit, T\]
+    - \[abort, T\]
 
 <hr>
 
