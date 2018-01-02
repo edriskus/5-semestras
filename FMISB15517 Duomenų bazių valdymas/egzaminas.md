@@ -53,14 +53,22 @@
  <br>***Jei sąlygos C laukai nėra L sąraše**, jie turi būti įtraukti į pirmines projekcijas, o atlikus JOIN reiks suprojektuoti papildomai be C. Dekarto sandaugos atveju tai nėra aktualu (C nėra).*
 
  8. Operacijos su ∪ ir ∩ komutatyvios, bet su - ne.
- 9. 
-10. 
-11. 
-12. 
+ 9. (R * S) * T ≡ R * (S * T)
+ <br>*Dekarto sandauga (arba **Join**) bei ∪ ir ∩ atskirai kiekviena yra asociatyvios.*
+
+10. σ<sub>C</sub> (R * S) ≡ (σ<sub>C</sub> (R)) * (σ<sub>C</sub> (S))
+ <br>*Išrinkimas komutuoja su ∪ ir ∩ ir -*
+
+11. π<sub>C</sub> (R ∪ S) ≡ (π<sub>C</sub> (R)) ∪ (π<sub>C</sub> (S))
+ <br>*Projekcija komutuoja su ∪*
+
+12. C ≡ NOT(C1 AND C2) ≡ NOT(C1) OR NOT(C2)
+<br>C ≡ NOT(C1 OR C2) ≡ NOT(C1) AND NOT(C2)
+ <br>*DeMorgano (išrinkimo sąlygai C)*
 
 ### Siūlomi optimizacijos algoritmo žingsniai
 
-<hr>
+---
 
 ### Reliacinė algebra
 <a name="cht-reliacine-algebra"></a>
