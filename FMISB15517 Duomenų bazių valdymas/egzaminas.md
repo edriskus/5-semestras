@@ -1,7 +1,11 @@
 # FMISB15517 Duomenų bazių valdymas
+
 ## SQL užklausų apdorojimas
+
 - **Sistemos katalogas** - objektų rinkinys, saugantis informaciją apie kitus DB esančius objektus ir DB struktūrą.
+
 ### Užklausos vykdymo etapai
+
 1. SQL sakinys
     - Sakinio sintaksinė analizė
     - Semantinė analizė **(DBSK)**
@@ -24,6 +28,7 @@
 - Vykdant medžio struktūros transformacijas, svarbu įsitikinti, kad restruktūrizacijos procesas nepakeis galutinio rezultato.
 
 ### Pagrindinės transformavimo taisyklės
+
  1. σ<sub> C1 AND C2 AND C3 ...</sub>(R) ≡ σ<sub>C1</sub>(σ<sub>C2</sub>(σ<sub>C3</sub>...(R)...))
  <br>*Konjunktyvus išrinkimas skaidomas į seriją paprastų išrinkimų.*
 
@@ -43,8 +48,11 @@
  <br>σ<sub>C</sub>(R ⋈ S) ≡ (σ<sub>C1</sub>(R)) ⋈ (σ<sub>C2</sub>(S))
  <br>*Išrinkimo ir Dekarto sandaugos (arba **Join**) komutatyvumas.*
 
- 7. 
- 8. 
+ 7. π<sub>L</sub>(R ⋈<sub>C</sub> S) ≡ (π<sub>A1,...,An</sub>(R)) ⋈<sub>C</sub> (π<sub>B1,...,Bm</sub>(R))
+ <br>*Projekcijos ir Dekarto sandaugos (arba **Join**) komutatyvumas.*
+ <br>***Jei sąlygos C laukai nėra L sąraše**, jie turi būti įtraukti į pirmines projekcijas, o atlikus JOIN reiks suprojektuoti papildomai be C. Dekarto sandaugos atveju tai nėra aktualu (C nėra).*
+
+ 8. Operacijos su ∪ ir ∩ komutatyvios, bet su - ne.
  9. 
 10. 
 11. 
