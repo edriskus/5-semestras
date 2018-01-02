@@ -123,6 +123,101 @@
 
 ## Išskirstytos duomenų bazės
 
+- **Išskirstytoji duomenų bazė** – tai duomenų rinkinys, logiškai priklausantis tai pačiai duomenų bazei, bet fiziškai saugomas skirtingose vietose, t.y. mazguose, sujungtuose kompiuterių tinklu
+- **Šliuzai** (Gateways) – duomenų mainams paruošiamos nesudėtingos procedūros, nėra tarp šaltinių sąveikos kaip vieningoje DBVS
+- Duomenys išskirstomi į **fragmentus** tam, kad juos galima būtų išskirstyti tarp mazgų taip, kad viena užklausa būtų vykdoma viename mazge.
+- **Fragmentacijos schema** aprašo, kokiu būdu turėtų būti gaunamas bendras DB vaizdas iš atskirų fragmentų.
+- **Dislokacijos schema** nusako, kokiuose tinklo mazguose yra išdėstyti minimi DB fragmentai.
+- **Replikacija** – duomenų atkartojimas kitame serveryje. 
+- **Pilnoji** replikacija – visa duomenų bazė, atkartota visuose serveriuose (ribinis atvejis ).
+    - Patikimumas ir prieinamumas stipriai išauga, tačiau darbas lėtas, sudėtingi konkurencinės kontrolės ir DB atstatymo mechanizmai.
+    - Tarpiniai atvejai – dalinė replikacija.
+- **Replikacijos schema** nusako, kiek, kokiuose tinklo mazguose, kokių fragmentų kopijos daromos.
+
+***Naudotojui išskirstyta sistema turi atrodyti taip pat, kaip ir neišskirstytoji sistema!***
+
+- Nepriklausymas nuo **fragmentavimo**
+- Nepriklausymas nuo **replikavimo**;
+- Nepriklausymas nuo **operacinės sistemos**;
+- Nepriklausymas nuo **tinklo**;
+- Nepriklausymas nuo **DBVS**.
+- **Techninis** nepriklausomumas;
+- Išskirstytųjų **užklausų** apdorojimas;
+- Išskirstytų **transakcijų** valdymas;
+- Ekonominė nauda. *(efektyviausia, kai maži galingumai sujungiami į vieną tinklą)*
+
+<br>
+
+- Programinė įranga skirstoma į tris lygmenis:
+    - Serverio lygmuo;
+    - Kliento lygmuo;
+    - Susisiekimo (ryšių) lygmuo.
+- Kliento funkcijos:
+    - Parengti išskirstytų užklausų vykdymo planą;
+    - Prižiūrėti šio plano vykdymą, t.y. siųsti komandas serveriams;
+    - Paslėpti nuo vartotojo duomenų išskirstymo detales (išskirstymo permatomumas/skaidrumas)
+
+### Trūkumai
+
+- Sudėtingesnė valdymo požiūriu;
+- Brangesnė (ypač programinė įranga ir tinklų eksploatacija bei priežiūra);
+- Jautresnė saugai (sunkiau kontroliuoti);
+- Sunkiau kontroliuoti DB vientisumą;
+- Sunkiau projektuojama;
+- Silpniau standartizuota (ypač heterogeninės DB)
+
+### Tipai
+- **Homogeninės** (visuose mazguose veikia to paties gamintojo DBVS) – lengvai valdomos, tačiau sunkiai įgyvendinamos:
+    - Autonominės
+    - Neautonominės (egzistuoja centrinė koordinuojanti DBVS)
+- **Heterogeninės** (mazguose veikia skirtingos kilmės DBVS) – sunkiai valdomos, dažnai paveldėtos sistemos
+    - Su **pilnu** DBVS funkcionalumu (angl. full DBMS functionality)
+    - Su **daliniu** DBVS funkcionalumu (angl. partial-multidatabase)
+        - Federacinė – lokalios DBVS palaiko specifinių duomenų užklausas
+            - *Silpnai* sukibusi (angl. loose integration) – lokalios duomenų bazės turi savo DB schemas
+            - *Tampriai* sukibusi (angl. tight integration) – lokalios duomenų bazės naudoja bendrą DB schemą
+        - Iš centro valdoma – visi duomenys pasiekiami per centrinį koordinuojantį modulį
+
+### Fragmentacija
+- **Horizontalioji**:
+    - Išskirstomi sąryšio kortežai. Tai analogas išrinkimo **(SELECT)** operacijai.
+    - Fragmentacija yra **visiška**, jei yra fragmentai, išskirstyti pagal sąlygas C1, C2, ..., Cn ir šie fragmentai apima visas sąlygas, t.y. kiekvienas įrašas tenkina bent vieną sąlygą.
+    - Dažnai įrašas gali tenkinti tik vieną iš pateiktų sąlygų **(disjoint)**, pvz. Darbuotojų išskirstymas pagal skyrius.
+- **Vertikalioji**:
+    - Išskirstymas vyksta tarp atributų;
+    - **Pirminio rakto atributas** įtraukiamas į kiekvieną fragmentą.
+    - Vertikalioji fragmentacija turi atitikti šias taisykles:
+        - **Užbaigtumo** – visų fragmentų aibė sudaro pradinį sąryšį;
+        - **Grąžinimo taisyklė** – visų fragmentų junginys (angl. join) atitinka pradinį sąryšį;
+        - **Unikalumo** – bet kurių dviejų fragmentų atributai neturi kartotis, išskyrus raktinį atributą.
+- **Mišrioji** (Naudojant abi fragmentacijas)
+
+<br>
+
+- Savybės:
+    - **Efektyvu**: duomenys saugomi ten, kur naudojami;
+    - **Geresnis našumas**: lokali prieigos optimizacija;
+    - **Saugumas**: vietoje saugomi tik reikalingi duomenys;
+    - Užklausos surenkant duomenis **lengviau vykdomos**: naudojamas duomenų iš skirtingų skirsnių (partitions) sujungimas (union) horizontalios fragmentacijos atveju;
+    <br><br>
+    - Gali būti **nepriimtina prieigos sparta** kai duomenys išbarstyti;
+    - **Maža duomenų sauga**: nėra duomenų pasikartojamumo;
+    - Užklausos surenkant duomenis **sunkiai vykdomos**: naudojamas duomenų iš skirtingų skirsnių (partitions) apjungimas (join) vertikalios fragmentacijos atveju.
+
+<br>
+
+- Skirstant reikia įvertinti:
+    - Užklausų kilmę ir turinį;
+    - Komunikacijų sąnaudas;
+    - Duomenų saugyklų dydžius;
+    - Apdorojimo pajėgumas;
+    - Fragmentų replikaciją.
+
+### DB Integracijos laipsnis
+- Sistema laikoma **visiškai neautonomine**, jei prie duomenų galima prieiti tik per kliento PĮ ir jos paskirstymą, net jei duomenys saugomi lokaliai.
+- Sistema yra **dalinai autonominė**, jei kai kuriuos duomenis galima pasiekti tiesiogiai (lokaliomis transakcijomis).
+- **Globalios integracijos** atveju vartotojui atrodo, kad jis dirba su centralizuota DB.
+- Kai yra visiška autonomija, bazė vadinama **federacine** ar **multibazine** (kiekviena dalis turi savo vartotojus, ir tik kai kurie duomenys imami iš kito serverio).
 <hr>
 
 ## Transakcijos
