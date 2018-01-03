@@ -291,6 +291,79 @@
 
 ## [Duomenų bazės fiziniame lygmenyje](#duomenų-bazės-fiziniame-lygmenyje)
 
+- Laikmenų tipai:
+    - **Pirminės** - greiti, riboto dydžio įrenginiai, pasiekiami CPU
+    - **Antrinės** - pasiekiami tik per pirmines laikmenas
+- Prieiga:
+    - Nuolatinė **(online)** - *SSD, HDD, RAM*
+    - Nenuolatinė **(offline)** - *Juostos, DVD, CD-ROM*
+- **DB** saugomos antrinėse laikmenose:
+    - DB yra didelės ir paprastai netelpa ribotose pirminėse laikmenose (operatyviojoje kompiuterio atmintyje);
+    - Trykiai, lemiantys duomenų praradimą, žymiai dažniau vyksta operatyviojoje atmintyje, nei diskuose;
+    - Pirminių laikmenų atminties vieneto kaina žymiai mažesnė, nei antrinių.
+- **DB** susideda iš kelių failų ir daugybės įrašų, kurių tik nedidelė dalis darbo metu kopijuojama į operatyviąją atmintį ir po to apdorojus įrašoma atgal.
+
+### Loginė disko talpos struktūra
+- **Sisteminė sritis**:
+    - Kelties sektorius (**Boot Sector**) – nulinio (išorinio) takelio pirmas sektorius
+    - Dvi kopijos **FAT (File Allocation Table)**. Naudojama pirma kopija, antra tik atstatymui. FAT elementai būna **12** bitų (FDD) ir **16**, **32** bitų (HDD). Kuo didesnis elemento ilgis, tuo daugiau klasterių gali aptarnauti. **Klasteris** – vienas ar keli logiškai susieti sektoriai.
+    - **Šakninis** (pagrindinis) katalogas. Diskeliuose gali talpinti informaciją apie 224 įrašus (išskirta 14 sektorių po 16 elementų).
+- **Duomenų sritis**. Gali būti fragmentuota.
+
+### HDD
+
+- Didelė talpa **(250GB-4TB)**, pseudohermetiška konstrukcija.
+- **Sukimosi greičiai**:
+    - 5400-7200 aps/min.
+    - 10000, 15000 (SCSI) aps/min.
+- Galvutės nesiliečia prie paviršiaus, o juda ant oro pagalvės 0,05 – 0,1 μm atstumu.
+    - Autoparkavimas (Landing Zone).
+    - Aušinimas.
+    - Oro filtras recirkuliacijai.
+    - Duomenų buferizavimas diske (cache).
+- Šiuo metu naudojama iki **1200 GB per Platter** (plokštelėje, t.y. dviejuose paviršiuose) technologija (diskų talpa kartotinė pusei šio dydžio).
+- **Diskelio talpa** = Pusės * Takeliai * Sektoriai * Baitai sektoriuje
+- **HDD talpa** = Cilindrai * Galvutės * Sektoriai * 512 B 
+- Talpa didinama, didinant tankį (mažinant magnetinę galvutę). 2007 m. Hitachi sumažino galvutės dydį iki 50 nm.
+- **Siekis** – disko galimybė pasirinkti reikalingą cilindrą.
+- Vidutinė siekio trukmė (Average Seek Time) **~8 ms**. 
+- **Vidutinė paieškos trukmė** – priklauso nuo galvučių mechanizmo spartos ieškant gretimo takelio.
+- Patikimumas **MTBF (Mean Time Between Failures)** – apie 0,5 milijono val.
+- **Spec. diskuose** magnetinės galvutės nėra judinamos, jos sumautos viena šalia kitos – po vieną kiekvienam takeliui. Brangu ir ribota.
+- Laikas, reikalingas nuskaityti duomenis, susideda iš:
+    - Siekio trukmės;
+    - Sukimosi latentiškumo (laikas, reikalingas atsukti norimą sektorių);
+    - Bloko nuskaitymo trukmės.<br>
+<br>*Pirmosios dvi trukmės yra žymiai didesnės, todėl naudinga didesnius vienu metu skaitomų – rašomų duomenų masyvus talpinti tame pačiame cilindre, iš eilės einančiuose blokuose (siekis ir sukimosi latentiškumas skaičiuojamas tik pirmam blokui (sektoriui)).*
+
+### SSD
+
+- Spartus (greitas)
+- Vartoja mažai energijos
+- Atsparus mechaniškai
+<br><br>
+- Brangus
+- Ribotas perrašymų skaičius
+- MLC (Multiple Level Cell) technologija
+
+### RAID
+
+- Redundant Array of Independent Disks (*Perteklinis nepriklausomų diskų masyvas*) - į vieną sisemą sujungti keli diskai, programų matomi, kaip vienas. Padidina talpą ir patikimumą.
+- **RAID 0**
+<br>*Duomenys tolygiai paskirstyti tarp diskų, galima rašyti ar skaityti su visais diskais vienu metu. Talpa - visų diskų talpų suma. Duomenys prarandami sugedus bet kuriam diskui.*
+
+- **RAID 1**
+<br>*Visi diskai yra vienas kito kopijos. Talpa - vieno disko talpa. Duomenys prarandami TIK sugedus visiems.*
+
+- **RAID 1E**
+<br>*Bet kuri informacija saugoma bent dviejuose diskuose vienu metu. Šis jungimas nelaikomas standartiniu. Talpa - pusė visų diskų bendros talpos.*
+
+- **RAID 5**
+<br>*Visi diskai saugo po nedidelę dalį kituose diskuose esančių duomenų. Talpa = bendra - 1 diskas. Duomenys prarandami sugedus daugiau, nei 1 diskui.*
+
+- **RAID 6**
+<br>*Visi diskai saugo po nedidelę dalį kituose diskuose esančių duomenų, bet daugiau, nei RAID 5. Talpa = bendra - 2 diskai. Duomenys prarandami sugeduis daugiau, nei 2 diskams.*
+
 <hr>
 
 ## [Duomenų bazės įrašai](#duomenų-bazės-įrašai)
