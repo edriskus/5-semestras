@@ -554,6 +554,16 @@ užpildomi nepilnai.
 <hr>
 
 ## [Objektiškai orientuotos ir objektinės DB](#objektiškai-orientuotos-ir-objektinės-db)
+
+- **RDBMS** modelio **trūkumai**:
+    - Neatvaizduojami realaus pasaulio objektai
+    - Vienalytė struktūra
+    - Nėra galimybių apibrėžti naujas operacijas
+    - Nėra rekursinio apdorojimo
+    - Nesuderinama su programavimo kalbomis
+
+<br>
+
 - **Object - oriented DB** - OOP
 - **Object - relational DB** - hibridinės
 - Lengviau aprašyti sudėtingas struktūras.
@@ -600,7 +610,35 @@ užpildomi nepilnai.
 
 ## [Dedukcinės DB](#dedukcinės-db)
 
--
+- DB valdymo sistemos, galinčios daryti logines išvadas iš jose laikomų faktų ir taisyklių
+- **Faktai** - DB lentelių eilutės
+- **Taisyklės** - analogiškos rodiniams, tik papildomai leidžia rekursines užklausas
+- **Prolog:**
+    - Prolog's single data type is the term. Terms are either atoms, numbers, variables or compound terms.
+        - An atom is a general-purpose name with no inherent meaning. Examples of atoms include x, red, 'Taco', and 'some atom'.
+        - Numbers can be floats or integers. ISO standard compatible Prolog systems can check the Prolog flag "bounded". Most of the major Prolog systems support arbitrary precision integer numbers.
+        - Variables are denoted by a string consisting of letters, numbers and underscore characters, and beginning with an upper-case letter or underscore. Variables closely resemble variables in logic in that they are placeholders for arbitrary terms.
+        - A compound term is composed of an atom called a "functor" and a number of "arguments", which are again terms. Compound terms are ordinarily written as a functor followed by a comma-separated list of argument terms, which is contained in parentheses. The number of arguments is called the term's arity. An atom can be regarded as a compound term with arity zero. Examples of compound terms are truck_year('Mazda', 1986) and 'Person_Friends'(zelda,[tom,jim]).
+    - Prolog programs describe relations, defined by means of clauses. Pure Prolog is restricted to Horn clauses. There are two types of clauses: facts and rules. A rule is of the form
+    - is tom a cat?
+    <br>
+    ```
+    ?- cat(tom).
+    Yes
+    ```
+    - what things are cats?
+    <br>
+    ```
+    ?- cat(X).
+    X = tom
+    ```
+- **Datalog**. In contrast to Prolog, Datalog
+    - disallows complex terms as arguments of predicates, e.g., p (1, 2) is admissible but not p (f (1), 2),
+    - imposes certain stratification restrictions on the use of negation and recursion,
+    - requires that every variable that appears in the head of a clause also appears in a nonarithmetic positive (i.e. not negated) literal in the body of the clause,
+    - requires that every variable appearing in a negative literal in the body of a clause also appears in some positive literal in the body of the clause[4]
+
+ 
 
 <hr>
 
