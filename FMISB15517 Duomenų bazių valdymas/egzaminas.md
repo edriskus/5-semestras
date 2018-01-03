@@ -12,8 +12,72 @@
 9. [Aktyviosios DB](#aktyviosios-db)
 
 ## [Duomenų bazių valdymo sistemos](#duomenų-bazių-valdymo-sistemos)
-- **Duomenų bazių valdymo sistema (DBVS)** - 
-- 
+- **Duomenų bazių valdymo sistema (DBVS)** - programinių priemonių kompleksas, leidžiantis:
+    - Aprašyti (sukurti) duomenų struktūras
+    - Įvesti duomenis (aktualaus būvio palaikymas)
+    - Atlikti duomenų paieška (svarbiausia funkcija)
+    - Sudaryti įvairias ataskaitas
+    - *Taip pat: Duomenų vientisumo palaikymas, Duomenų neprieštaringumo kontrolė, Duomenų apsauga, Kelių nepriklausomai dirbančių vartotojų vienalaikis darbas su duomenimis, Duomenų bazės būsenos atstatymas po avarijų*
+- **Kliento - serverio DB architektūra**:
+    - **DB serveris** yra atsakingas už: duomenų keitimo ir išgavimo apdorojimą, duomenų apdorojimą, DB taisyklių ir ribojimų įgyvendinimą ir palaikymą, duomenų saugumo palaikymą.
+    - **DB klientas** yra atsakingas už: duomenų pateikimą vartotojui, sąsajos užtikrinimą, užklausų perdavimą serveriui.
+    - Dažnai naudojamos trijų ir daugiau sluoksnių kliento ir serverio architektūros, kur verslo logika, įgyvendinama verslo taisyklių pagalba, yra apdorojama atskiro serverio.
+    - Ryšys tarp kliento ir serverio standartiškai užtikrinamas naudojant **Open Database Connectivity (ODBC)**
+    - **3 sluoksnių arch**: FE - BE - DB
+- **Populiariausios DBMS:**
+    1. Oracle *RDBMS*
+    2. MySQL *RDBMS*
+    3. Microsoft SQL Server *RDBMS*
+    4. PostgreSQL *RDBMS*
+    5. MongoDB *DS*
+- **Palyginimas:** (1-4)
+    - **Visos** turi Union, Inner/Outer joins, inner selects, merges, BLOBs and CLOBs, kursorius, trigerius, funkcijas, procedūras, išorines paprogrames.
+    - Microsoft SLQ (nuo 2005), Oracle ir PostgreSQL turi **Intersect ir Except**, MySQL ir Informix (?) neturi.
+- **Kiekybinės charakteristikos:**
+    - **Max DB dydis**
+    <br>*Dažniausiai neribotas arba labai didelis (500TB Microsoft SQL)*
+
+    - **Max lentelės dydis**
+    <br>*Oracle 4GB, MySQL 2-16GB, PostgreSQL 32TB, MSSQL 500TB*
+
+    - **Max eilutės dydis**
+    <br>*MSSQL ir MySQL kilobaitai, PostgreSQL 1.6TB, Oracle neribotas*
+
+    - **Max stulpelių skaičius**
+    <br>*200-3000 įvairiai*
+
+    - **Max BLOB/CLOB dydis**
+    <br>*1-4GB įvairiai*
+
+    - **Max CHAR dydis**
+    <br>*Kilobaitai, tik PostgreSQL - 1GB*
+
+    - **Max NUMBER dydis**
+    <br>*Bitai, tik PostgreSQL - Neribotas*
+
+### NoSQL
+
+- Reliacinė bazė, nenaudojanti SQL kalbos (no relational). Taip pat suprantama kaip **not only SQL**:
+    - **Raktas-reikšmė**
+    <br>*Raktas - string, reikšmė - bet kas. Galimos **GET**, **PUT** bei **DELETE** operacijos. Greitos ir lanksčios.*
+    <br>Redis, Riak
+    
+    - **Grafų** (tinklinės)
+    <br>*Susideda iš mazgų, ryšių tarp jų ir mazgų bei ryšių savybių. Duomenų grafai nėra struktūrizuoti, nėra schemų ir nėra privaloma apibūdinti duomenų tipus*
+    <br>Neo4j, FlockDB
+    
+    - **Stulpelio** tipo
+    <br>*Dar vadinamos **vertikaliosiomis**. Kaip RDB, tik orientuotos į stulpelius. Lengva suspausti, atlikti agregacinius veiksmus. Lėtesnis įrašų skaitymas ir rašymas.*
+    <br>HBase, Cassandra
+    
+    - **Dokumentinės** (į dokumentus orientuotos)
+    <br>*Duomenys saugomi kolekcijose. Dokumento formatas ir schema nėra iš anksto aprašomi. Galimi hierarchiniai duomenys (nested)*
+    <br>MongoDB, CoucheDB
+    
+    - **Multi-modelinės**
+    <br>*Anksčiau minėtų duomenų bazių naudojimas kartu (įvairus deriniai). Tam tikrais atvejais kartu naudojant kelias skirtingas DBVS sudaroma lankstesnė ir patikimesnė sistema. Pavyzdžiui, socialinių tinklų projektai dažnai naudoja reliacinę arba stulpelio tipo duomenų bazę kartu su grafų duomenų baze.*
+    
+    
 
 ## [SQL užklausų apdorojimas](#sql-užklausų-apdorojimas)
 
