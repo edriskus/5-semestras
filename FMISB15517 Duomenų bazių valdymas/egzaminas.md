@@ -1,10 +1,19 @@
 # FMISB15517 Duomenų bazių valdymas
 
+0. [Duomenų bazių valdymo sistemos](#duomenų-bazių-valdymo-sistemos)
 1. [SQL užklausų apdorojimas](#sql-užklausų-apdorojimas)
 2. [Išskirstytos duomenų bazės](#išskirstytos-duomenų-bazės)
 3. [Transakcijos](#transakcijos)
 4. [Duomenų bazės fiziniame lygmenyje](#duomenų-bazės-fiziniame-lygmenyje)
 5. [Duomenų bazės įrašai](#duomenų-bazės-įrašai)
+6. [Indeksai](#indeksai)
+6. [Objektiškai orientuotos ir objektinės DB](#objektiškai-orientuotos-ir-objektinės-db)
+6. [Dedukcinės DB](#dedukcinės-db)
+6. [Aktyviosios DB](#aktyviosios-db)
+
+## [Duomenų bazių valdymo sistemos](#duomenų-bazių-valdymo-sistemos)
+- **Duomenų bazių valdymo sistema (DBVS)** - 
+- 
 
 ## [SQL užklausų apdorojimas](#sql-užklausų-apdorojimas)
 
@@ -367,5 +376,22 @@
 <hr>
 
 ## [Duomenų bazės įrašai](#duomenų-bazės-įrašai)
+
+<hr>
+
+
+## [Indeksai](#indeksai)
+
+<hr>
+
+## [Objektiškai orientuotos ir objektinės DB](#objektiškai-orientuotos-ir-objektinės-db)
+
+<hr>
+
+## [Dedukcinės DB](#dedukcinės-db)
+
+<hr>
+
+## [Aktyviosios DB](#aktyviosios-db)
 
 <hr>
