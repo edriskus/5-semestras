@@ -76,8 +76,22 @@
     
     - **Multi-modelinės**
     <br>*Anksčiau minėtų duomenų bazių naudojimas kartu (įvairus deriniai). Tam tikrais atvejais kartu naudojant kelias skirtingas DBVS sudaroma lankstesnė ir patikimesnė sistema. Pavyzdžiui, socialinių tinklų projektai dažnai naudoja reliacinę arba stulpelio tipo duomenų bazę kartu su grafų duomenų baze.*
-    
-    
+
+### ACID
+
+- **Atomiškumas** (angl. Atomicity) – transakcija vykdoma kaip atomarinė operacija, t.y. arba visa vykdoma arba visa nevykdoma;
+- **Stabilumas** (angl. Consistency) – tiek prieš transakciją, tiek ir po jos sistema yra normalioje darbo būsenoje;
+- **Izoliacija** (angl. Isolation) – skirtingų vartotojų transakcijos neturi trukdyti viena kitai;
+- **Ilgalaikiškumas/Negrįžtamumas** (angl. Durability) – jei transakcija įvykdyta, tai jos darbo rezultatas turi būti saugomas DB.
+
+### BASE
+
+*ACID reikalavimų įgyvendinimas reikalauja laiko ir sistemos resursų. Kai kuriose NoSQL sistemoms buvo įgyvendinti lankstesni BASE reikalavimai:*
+- **Bazinis prieinamumas** (angl. basic availability) – kiekviena užklausa garantuotai pasibaigs (sėkmingai arba nesėkmingai);
+- **Lanksti būsena** (angl. soft state) – sistemos būsena gali keistis laikui bėgant;
+- **Galutinis neprieštaringumas** (angl. eventual consistency) – duomenys gali būti nedarnūs tam tikru laiko momentu, bet galiausiai jie taps darnūs.
+
+<hr>
 
 ## [SQL užklausų apdorojimas](#sql-užklausų-apdorojimas)
 
