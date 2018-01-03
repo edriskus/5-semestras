@@ -554,10 +554,53 @@ užpildomi nepilnai.
 <hr>
 
 ## [Objektiškai orientuotos ir objektinės DB](#objektiškai-orientuotos-ir-objektinės-db)
+- **Object - oriented DB** - OOP
+- **Object - relational DB** - hibridinės
+- Lengviau aprašyti sudėtingas struktūras.
+- Trūkumas - sudėtinga standartizuoti
+- **ID** generuojamas sistemos, GUID
+- **Klasės**, single ir multiple inheritance
+- **Overloading**, polymorphism
+
+### Permanentinės programavimo kalbos
+- Kalbos, kuriomis apdorojami tarpiniai duomenys gali būti išsaugoti, o vėliau - panaudojami kitų programų.
+- **Object-relational impedence mismatch** - jei bandome naudoti SQL vietoje OODB kalbos
+- **Pointer (object) swizzling** - ID pavertimas adresais
+- **Veikimo principas:**
+    1. Naudojant OID, nustatomas reikalingas blokas, duomenys iš disko keliami į cache
+    1. Objektai susiejami nuorodomis, kitaip paruošiami
+    1. Programa pasiekia objektą ir jį atnaujina
+    1. Objektas permanentiškai išsaugomas, atlaisvinama cache.
+- **Realizacija:** (skirtingi būdai)
+    - Kontroliniame taške visas programos cache išsaugomas diske. Šį tašką pasiekti gali tik viena programa.
+    - Serializacija, konservacija. Kuriamos deep kopijos. Duplikavimas.
+    - Išsaugojimas puslapiais:
+        - *Allocation-based* - turi būti nurodyta objektą paversti permanentiniu
+        - *Reachability-based* - objektas permanentinis, jei prieinamas iš root permanent objekto.
+- **Ortogonalusis permanentiškumas:**
+    1. Duomenų permanentiškumas nepriklauso nuo to, koks programos fragmentas jį naudoja
+    1. Nepriklauso nuo duomenų tipo. Visi tipai gali būti permanentiniai
+    1. Tranzityvumas - identifikavimas ir organizacija nepriklauso nuo objektų tipų.
+- **Reikalavimai ODBVS:**
+    1. Complex objects
+    1. Object identity
+    1. Encapsulation
+    1. Types and Classes
+    1. Class or Type Hierarchies
+    1. Overriding, overloading and late binding
+    1. Computational completeness
+    1. Extensibility
+    1. Persistence
+    1. Secondary storage management
+    1. Concurrency
+    1. Recovery
+    1. Ad Hoc Query Facility 
 
 <hr>
 
 ## [Dedukcinės DB](#dedukcinės-db)
+
+-
 
 <hr>
 
