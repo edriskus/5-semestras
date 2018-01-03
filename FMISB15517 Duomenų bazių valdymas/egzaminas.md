@@ -377,6 +377,27 @@
 
 ## [Duomenų bazės įrašai](#duomenų-bazės-įrašai)
 
+- Faile talpinami duomenys, sudalinti įrašais.
+- Didelės apimties objektai (binary large object) yra vadinami BLOB ir talpinami atskirose struktūrose (failuose), ne įraše. Įraše paliekama tik rodyklė į objektą. (Atitinkamai ir TXT tipas).
+- Paprastai failą sudaro vieno tipo įrašai. Jie gali būti:
+    - **Fiksuoto ilgio** 
+    <br>*Fiksuoto ilgio įrašus lengva pasiekti: norint nuskaityti n-tajį L ilgio įrašą, reikia nuskaityti nuo (n-1)\*L+1 iki n\*L baitus.*
+    - **Kintamo ilgio**
+    <br>*Kai įrašo laukai kintamo ilgio, dedamas specialaus baito skirtukas*
+
+<br>
+
+- Disko darbo metu skaitomas ir rašomas blokas (klasteris).
+    - B – bloko ilgis
+    - R – įrašo ilgis
+    - Kai B ≥ R, tai bfr=int(B/R), kur **bfr** vadinamas **blokavimo koeficientu** (blocking factor), o neišnaudojama vieta sudaro B-bfr\*R.
+- Duomenų paskirstymas blokuose gali būti:
+    - Jungtinės struktūros **(spanned)**
+    - Ne jungtinės struktūros **(unspanned)**
+    <br>*dažniausiai naudojama, kai B≥R ir įrašai yra fiksuoto ilgio, nes tada ypač lengva apdoroti įrašus (jie kiekviename bloke prasideda toje pačioje vietoje).*
+- Kai įrašai yra kintamo ilgio, galimi naudoti abu būdai, pasirinkimą lemia vidutinis įrašo ilgis (kai jis artimas B, verta naudoti jungtinę struktūrą).
+- Kintamo įrašo ilgio atveju bfr nusako vidutinis įrašo ilgis. Norint įrašyti r įrašų reiks blokų b=int(r/bfr)+1.
+
 <hr>
 
 
