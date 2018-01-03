@@ -638,10 +638,63 @@ užpildomi nepilnai.
     - requires that every variable that appears in the head of a clause also appears in a nonarithmetic positive (i.e. not negated) literal in the body of the clause,
     - requires that every variable appearing in a negative literal in the body of a clause also appears in some positive literal in the body of the clause[4]
 
- 
-
 <hr>
 
 ## [Aktyviosios DB](#aktyviosios-db)
 
-<hr>
+- Apibrėžimas: **Aktyvioji DB sistema (ADBS)** - tai sistema, gebanti reaguoti į aplinkos įvykius.
+- Aktyvios sistemos yra siejamos su taisyklės (sintaksinė išraiška, aprašanti sistemos reakciją) sąvoka. Aktyvios taisyklės dažnai siejamos su trigger’iais, aprašomos naudojant įvykis-sąlyga-veiksmas (ECA). 
+- **ECA** - yra stebima ar įvyko įvykis, kuris aktyvuoja taisyklę. Taisyklės salyga, tai formulė, kuri turi būti tenkinama, kad būtų įvykdomas veiksmas. Veiksmas aprašo ką reikia daryti, kai taisyklė yra aktyvuojama ir jos sąlyga tenkinama.
+- Aktyvios duomenų bazės yra pasyvios faktų saugyklos. Joje aktyviai veikia vartotojo apibrėžta komponentė, galinti įtakoti tiek DB, tiek išorinę aplinką. Tai daroma įvykių, valdomų ECA taisyklių pagalba.
+- **Savybės**: 
+    - ADBS yra tradicinė DBS, kuri yra praplėsta papildoma aktyvumo savybe, kuri leidžia automatiškai, savalaikiai ir efektyviai reaguoti į įvykius. 
+    - ADBS gali atlikti operacijas automatiškai  atsižvelgiant į susiklosčiusią situaciją DB viduje ar išorėje.
+    - ADBS įgalina reaktyvios elgsenos specifikavimą ir įgyvendinimą.
+- **DBVS aktyvavimo būdai**:
+    - Jei DBVS yra aktyvuojama dažniau, negu to reikia, yra veltui naudojami DBVS resursai.
+    - Jei DBVS yra aktyvuojama rečiau, negu to reikia, svarbūs įvykiai gali būti visai neaptikti arba aptikti ne laiku.
+- **Verslo taisyklių įgyvendinimas**:
+    - Taisyklės struktūriniai ribojimai - įgyvendinami dalykinės srities koncepciniame modelyje.
+    - Taisyklės dinaminiai ribojimai - gali būti tiesiogiai išreikšti įvykis-taisyklė-veiksmas(ECA) taisyklėmis.
+
+### Įvykiai
+- **Įvykis** yra atsitikimas, įvykęs tam tikru laiko momentu.
+- Apibrėžiant įvykį yra nurodoma, kas turi būti stebima.
+- Būdas, kuriuo galima aptikti įvykį, priklauso nuo įvykio
+šaltinio. 
+- **Galimi šaltiniai**:
+    - duomenų keitimas – įvykio pasirodymo priežastis – tam
+    tikrų duomenų keitimas (insert, update, delete operacijos);
+    - elgsenos iškvietimas – įvykis pasirodo vykdant vartotojo
+    apibrėžtas operacijas;
+    - transakcija – įvykio pasirodymo priežastis – transakcijų
+    komandos;
+    - prieštaravimai – įvykis pasirodo kaip prieštaravimo
+    rezultatas;
+    - laikrodis – įvykis pasirodo tam tikru laiko momentu;
+    - išorė – įvykio pasirodymą nulemia už DB ribų vykstantys
+    pokyčiai 
+- **Problemos**:
+    - Apdorojant daug įrašu generuojama daug įvykių, po vieną kiekvienam įrašui 
+    - Kai laukiama įvykių poros, vienas įvykis įvyksta kelis kartus, o kitas tik vieną, kiek operacijų tada reikia atlikti
+- **Sąlygos** dažniausiai yra išreiškiamos kaip DB predikatai, tačiau gali būti supaprastintos, kad būtų padidintas įvertinimo efektyvumas. Sąlygos gali apimti ir išorinių funkcijų iškvietimą. Sąlygos reikalingos įvykiams(panašiai kaip trigeriai)
+- **Veiksmai gali**: 
+    - atnaujinti DB ar taisyklių rinkinio struktūrą, 
+    - sukelti tam tikrą elgseną DB viduje ar išorėje,
+    - informuoti vartotoją ar administratorių apie tam tikrą situaciją, • nutraukti transakciją. 
+- Veiksmas gali būti vykdomas, kaip priedas prie (in addition to) operacijos, kuri sukėlė atitinkamą įvykį arba vietoj jos (instead of).
+
+<br>
+
+- **Sąveika tarp taisyklių**
+<br>Kai gautame taisyklių rinkinyje yra keletas tinkamų, ir jos galbūt prieštarauja viena kitai – įvairios strategijos, kurią iš jų vykdyti (o gal kelias). Pasirinkti galima kaip ekspertinėse sistemose. 
+- Galima: 
+    - Vykdyti visus taisyklės atvejus nuosekliai. 
+    - Vykdyti visus taisyklės atvejus lygiagrečiai. 
+    - Vykdyti visus konkrečios taisyklės atvejus, prieš tai, kol nenagrinėjamos kitos taisyklės. 
+    - Vykdyti vieną ar keletą taisyklės atvejų
+
+<br>
+
+- **Baigtinumo patikra** 
+<br>Sistemos, kuriose yra apibrėžta daug aktyvių taisyklių, dažniausiai yra cikliškos. Dauguma ciklų yra nepavojingi, nes tiesiog apibūdina abipusę sąveiką tarp taisyklių. Detalios ciklų analizės metu galima nustatyti, ar ciklas yra nepavojingas. 
