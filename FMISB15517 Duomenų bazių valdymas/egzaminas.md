@@ -481,6 +481,61 @@
 
 ## [Indeksai](#indeksai)
 
+- **Indeksas** - duomenų struktūra, palengvinanti įrašų paiešką DB.
+- **Pirminis indeksas** (primary index) - indeksas pagal įrašo raktą (reikšmė unikali).
+<br><K(i), P(i)>
+<br>K(i) - pirmojo lauko, esančio i-tojo bloko įraše, reikšmė
+<br>P(i) - bloko adresas
+<br>Indekso įrašų tiek, kiek yra blokų faile.
+<br>***Block anchor*** - bloko inkaras - pirmasis bloko įrašas
+- **Klasterinis indeksas** (clustering index) - nebūtinos unikalios reikšmės.
+<br>*Kaip primary, tik K(i) patalpinamos visos nepasikartojančios reikšmės, o P(i) - bloko su pirmuoju rezultatu adresas.*
+- **Dense index** - beveik kiekvienam įrašui yra įrašas indekse, t.y., žinome, kur yra visų raktų įrašai. Įrašai surikiuoti K(i) atžvilgiu. Užima daugiau vietos, bet paieška efektyvesnė.
+- **Secondary index** - ne raktiniam laukui sukurtas indeksas:
+    - Kiekvienam pasikartojančios reikšmės įrašui sukurti įrašą indekse. Porų <K(i), P(i)> skaičius bus lygus įrašų faile skaičiui.
+    - Kiekvienam K(i) nurodyti daugiareikšmį <P1(i), ..., Pn(i)>. Šiuo atveju indekso įrašai bus kintamo ilgio.
+    - Kiekvienai nepasikartojančiai K(i) reikšmei įrašyti porą <K(i), P(i)>, čia rodyklė P(i) rodo į bloką (papildoma struktūra), kuriame saugomos visos rodyklės į pasikartojančius su ta pačia lauko reikšme įrašus (ar jų blokus). **Naudojamas dažniausiai**
+
+<br>
+
+- **Daugelio lygmenų indeksai** - populiariausia įrašų paieška sutvarkytose  struktūrose, kai adresų intervalas dalijamas pusiau. Kiekvienai paieškai tarp b blokų reikia log<sub>2</sub>(b) nuskaitymo operacijų.
+- Pirmasis (bazinis) lygmuo – įprastas indeksas. Kadangi struktūra sutvarkyta ir užima keletą blokų, galim pagal tą patį (raktinį) lauką sukurti pirminį indeksą indeksui.
+- Įrašų skaičius antrojo lygmens indekse bus bfr kartų mažesnis. Jei ir šis užima daugiau nei bloką – antrojo lygmens indeksui galim sukurti trečiojo 
+lygmens indeksą. Ir t.t.
+- n-tojo (paskutinio) lygmens indeksas vad. **indekso viršūne**.
+- Siekiant sumažinti problemų įterpiant ar trinant tvarkingoje lygmens struktūroje, lygmenų blokai **dinaminiuose** daugelio lygmenų indeksuose 
+užpildomi nepilnai.
+- Dažniausiai tokiuose indeksuose naudojama medžio struktūra.
+
+### Paieškos medis
+
+- Reikšmės K(i) sutvarkytos didėjimo tvarka.
+- Reikšmės saugomos <P<sub>1</sub>, K<sub>1</sub>, ... , P<sub>q</sub>, K<sub>q</sub>>
+- Kiekvienas P rodo į mazgą, kur K<sub>i-1</sub> < X < K<sub>i</sub>
+- **Trūkumai**:
+    - Algoritmai duomenims įterpti ar ištrinti negarantuoja, kad medis bus subalansuotas (visi lapai tame pačiame lygmenyje).
+    - Trinant įrašus, lieka daug tuščių mazgų, o medžio struktūra didelė (lėtėja paieška).
+
+### B tree
+
+- Keliami papildomi reikalavimai, dėl kurių:
+    - Medžiai yra subalansuoti (lapai viename lygmenyje)
+    - Trynimo atveju nelieka pustuščių ar tuščių mazgų.
+- Reikšmės saugomos <P<sub>1</sub>, <K<sub>1</sub>, Pr<sub>1</sub>>, ... , P<sub>q</sub>, <K<sub>q</sub>, Pr<sub>q</sub>>>
+- Mazgų kiekis p/2 < q < p
+- Visi lapai tame pačiame lygmenyje, rodyklės į mazgus yra NULL.
+- Trinant duomenis, jei mazgo užpilda <50%, jis suliejamas su kaimynais.
+- Nustatyta, kad darbo metu po įterpimų ir trynimų B medžio užpilda yra apie 69%
+- **Mazgo dydis**: (p*P)+((p-1)*(Pr+V)) ≤ B
+
+### B<sup>+</sup> tree
+
+- Idėja – rodykles į duomenis saugoti tik lapuose, todėl lapų ir vidinių mazgų struktūra yra skirtinga.
+- **Vidiniai mazgai**  <P<sub>1</sub>, K<sub>1</sub>, ... , P<sub>q</sub>, K<sub>q</sub>>
+- **Lapai** <P<sub>1</sub>, <K<sub>1</sub>, Pr<sub>1</sub>>, ... , P<sub>q</sub>, <K<sub>q</sub>, Pr<sub>q</sub>>>
+- Kadangi vidiniuose mazguose nebėra rodyklių į duomenis, galim sukišt daugiau rodyklių į mazgus. Didesnis šakojimosi koeficientas – mažesnė medžio struktūra (mažiau lygmenų).
+
+
 <hr>
 
 ## [Objektiškai orientuotos ir objektinės DB](#objektiškai-orientuotos-ir-objektinės-db)
