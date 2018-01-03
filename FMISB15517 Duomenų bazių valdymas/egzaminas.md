@@ -535,6 +535,21 @@ užpildomi nepilnai.
 - **Lapai** <P<sub>1</sub>, <K<sub>1</sub>, Pr<sub>1</sub>>, ... , P<sub>q</sub>, <K<sub>q</sub>, Pr<sub>q</sub>>>
 - Kadangi vidiniuose mazguose nebėra rodyklių į duomenis, galim sukišt daugiau rodyklių į mazgus. Didesnis šakojimosi koeficientas – mažesnė medžio struktūra (mažiau lygmenų).
 
+### Hash file
+
+- Idėja – yra funkcija h, vadinama atsitiktine maišos f-ja, kuri veikia įrašo maišos lauko reikšmę ir atiduoda bloko, kuriame yra įrašas, adresą.
+- Jei laukas K yra ne sveikas skaičius, tai bet kurį tipą galima tokiu padaryti.
+- Paprasčiausia hashing funkcija - h(K) = K mod M
+- Grėsmė - **collisions**. Sprendimai:
+    - nuoseklus adresavimas **(open addressing)** – nuosekliai ieškomi visi sekantys adresai, kol bus rastas neužimtas hash.
+    - plėtimas grandinėle **(chaining)** - adresų erdvė išplečiama, kiekvienam įrašui papildomai pridedama rodyklė. Įrašas rašomas į papildomą adresų erdvę
+    , o f-jos adreso rodyklė rodo papildomą adresą, šio rodyklė – kitą papildomą adresą ir pan.
+    - daugiapakopė maiša **(multiple hashing)** – esant kolizijai, pritaikoma kita f-ja, jei ir ji sudaro koliziją, ji sprendžiama nuoseklaus adresavimo būdu ar pritaikoma dar viena f-ja, jei ji sudaro koliziją ...
+- **External hashing** - rodoma ne į įrašo, o į bloko ar sektoriaus adresą. Funkcija rakto reikšmę paverčia reliatyviu adresu bloke. Kolizijos iškyla rečiau.
+- **Trūkumai:**
+    - Neefektyvu dideliems duomenų kiekiams (hashingas užtrunka)
+    - Užima daugiau vietos
+    - Paieška pagal neraktinį lauką - tokia pat neefektyvi, kaip ir kitais atvejais.
 
 <hr>
 
