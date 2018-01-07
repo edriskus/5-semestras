@@ -177,50 +177,35 @@ Personos padeda suprasti, kam produktas yra kuriamas. Žinant klientus, kuriems 
 
 # Maketai ir prototipai
 
-1. Žemo ir aukšto tikslumo prototipų samprata ir nauda.
+1. **Kadruotės.** Tikslas – pateikti sąveikos idėją, o ne nupiešti gražų paveikslą
+    - Kadruotės privalumai:
+        - Holistinis požiūris - kaip interfeisas padeda siekti tikslų
+        - Nepririša prie konkretaus interfeiso
+        - Tinka derinti produkto tikslus su suinteresuotų asmenų grupėmis
+        - Nuo pagundos tobulinti piešinius apsaugo laiko limitas, pvz. 10 minučių
+2. **Popierinis maketavimas:**
+    - Laikyti maketą vienoje vietoje, pvz. dėžutėje  taip nepasimes smulkūs maketo elementai.
+    -  Sąveiką imituoti aiškinant žodžiu
+    - Rodyti esminius elementus
+    - Nauda  Pagalbinė priemonė kalbant su naudotojais  Leidžia palyginti kelias alternatyvas
+3. **Interaktyvieji maketai:**
+    - Maketas su veikiančiais mygtukais. Esminių užduočių rodiniai
+4. **Detalieji prototipai:**
+    -  Dalinai veikianti sistema
 
-1. **1.**** Kadruotės:** Tikslas – pateikti sąveikos idėją, o ne nupiešti gražų paveikslą
+*2. 3 prototipų tipai: sketch, wireframes, mockup.*
 
-**Kadruotės privalumai:**
+- **Maketai:**
+    1. **Sąveikos maketai:**
+        1. Kadruotės
+        2. Scenarijai
+    2. **Interfeiso maketai:**
+        1. Greiti interkatyvūs maketai
+        2. Kompiuterinė animacija
+    3. **Detalieji prototipai:**
+        1.  Dalinai veikianti sistema
 
-- Holistinis požiūris - kaip interfeisas padeda siekti tikslų
-- Nepririša prie konkretaus interfeiso
-- Tinka derinti produkto tikslus su suinteresuotų asmenų grupėmis
-- Nuo pagundos tobulinti piešinius apsaugo laiko limitas, pvz. 10 minučių
-
-1. **2.**** Popierinis maketavimas:**
-
-- Laikyti maketą vienoje vietoje, pvz. dėžutėje  taip nepasimes smulkūs maketo elementai.
--  Sąveiką imituoti aiškinant žodžiu
-- Rodyti esminius elementus
-- Nauda  Pagalbinė priemonė kalbant su naudotojais  Leidžia palyginti kelias alternatyvas
-
-1. **3.**** Interaktyvieji maketai:**
-
-- Maketas su veikiančiais mygtukais Esminių užduočių rodiniai
-
-1. **4.**** Detalieji prototipai:**
-
-- Dalinai veikianti sistema
-
-2. 3 prototipų tipai: sketch, wireframes, mockup.
-
-Maketai
-
-1. **1.**** Sąveikos maketai:**
-  1. Kadruotės
-  2. Scenarijai
-2. **2.**** Interfeiso maketai:**
-  1. Greiti interkatyvūs maketai
-  2. Kompiuterinė animacija
-3. **3.**** Detalieji prototipai ****:**
-  1.  Dalinai veikianti sistema
-
-** **
-
-3. Prototipų kūrimo eiga, programinės įrangos pavyzdžiai
-
-# 5. Naudojamumo samprata
+# Naudojamumo samprata
 
 Vertinant naudojamumą atsižvelgiama į šiuos aspektus:
 – lengvumą išmokti ir naudoti;
@@ -319,7 +304,7 @@ trukmė,
 - Estetinis patrauklumas ir malonumas
 - Portabilumas
 
-# 6. Euristinis vertinimas
+# Euristinis vertinimas
 
 Nielseno euristikos:
 
