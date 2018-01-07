@@ -33,6 +33,7 @@
     - Pagal fiziologinius požymius, poreikius
 5. Įrenginių veikimų būdai, įvestis, išvestis
 <br>
+
     | Rega | Klausa | Oda |
     | --- | --- | --- |
     | Google akiniai | Klausos aparatas | Liečiamas ekranas |
@@ -75,8 +76,8 @@
     - UID
 3. **User interface design (UID)** - is a process of visually guiding the user through a product&#39;s interface via interactive elements and across all sizes/platforms. UID is responsible for the transference of a brand&#39;s strengths and visual assets to a product&#39;s interface as to best enhance the user&#39;s experience.
 4. Kuo skiriasi UI ir UX ?
-<br>***UX** yra kokybiškų sąsajų tarp vartotojo ir įmonės plėtros ir tobulinimo procesas. UX atsakingas už tyrimo, testavimo, plėtros, turinio, prototipo kokybės testavimo procesus.*
-<br>***UI** atsakingas už kiekvieno internetinio lango ar puslapio, su kuriais vartotojas turi sąsajų, dizainą bei UX dizainerių sukurto plano vizualinį pateikimą.*
+<br>**UX** *yra kokybiškų sąsajų tarp vartotojo ir įmonės plėtros ir tobulinimo procesas. UX atsakingas už tyrimo, testavimo, plėtros, turinio, prototipo kokybės testavimo procesus.*
+<br>**UI** *atsakingas už kiekvieno internetinio lango ar puslapio, su kuriais vartotojas turi sąsajų, dizainą bei UX dizainerių sukurto plano vizualinį pateikimą.*
 5. Iš kokių 5 pagrindinių dalių sudarytas į naudotoją orientuotų produktų projektavimas?
     1. **Atradimas** (Discovery)
         1. Pasikalbėti su užsakovais
