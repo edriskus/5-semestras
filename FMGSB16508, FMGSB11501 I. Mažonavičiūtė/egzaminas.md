@@ -208,124 +208,103 @@ Personos padeda suprasti, kam produktas yra kuriamas. Žinant klientus, kuriems 
 
 # Naudojamumo samprata
 
-Vertinant naudojamumą atsižvelgiama į šiuos aspektus:
-– lengvumą išmokti ir naudoti;
-– naudojimo lankstumą;
-– efektyvumą ir naudotojo pasitenkinimą
+- Vertinant naudojamumą atsižvelgiama į šiuos aspektus:
+    – lengvumą išmokti ir naudoti;
+    – naudojimo lankstumą;
+    – efektyvumą ir naudotojo pasitenkinimą
+- **Bendrieji naudojamumo tikslai**:
+    - Efektyvumas (kaip gerai sistema atlieka tai, kam ji skirta),
+    - Našumas (nurodo naudotojo veiklų rėmimo būdą),
+    - Saugumas (naudotojas yra apsaugotas rizikingose situacijose),
+    - Naudingumas,
+    - Išmokstamumas,
+    - Lengvas atsimenamumas.
+- **Naudojamumo apraše** yra:
+    - Sistemos naudojimo siekiai
+    - Sistemos reikalavimų specifikacija
+    - Naudotojo reikalavimai
+    - Galimi sėkmės kriterijai
 
-Bendrieji naudojamumo tikslai:
+<br>
 
-- Efektyvumas (kaip gerai sistema atlieka tai, kam ji skirta),
-- Našumas (nurodo naudotojo veiklų rėmimo būdą),
-- Saugumas (naudotojas yra apsaugotas rizikingose situacijose),
-- Naudingumas,
-- Išmokstamumas,
-- Lengvas atsimenamumas.
+- **Sociotechniniai modeliai** nagrinėja kartu technines, socialines ir organizacines problemas bei žmogiškuosius projektavimo aspektus.
+- Populiariausi modeliai:
+    - CUSTOM (User Skills and Task Match)
+    - OSTA (Open System Task Analysis)
+    - ETHICS (effective Technical and Human Implementation of Computer Systems)
+- **CUSTOM** veiklos:
+    - Aprašyti organizacijos kontekstą (tikslus,charakteristikas, politinį ir ekonominį pagrindą ir t.t.)
+    - Identifikuoti ir aprašyti organizacijos veikėjus (pirminius, antrinius, tretinius, aptarnaujančiuosius)
+    - Identifikuoti ir aprašyti darbo grupes
+    - Identifikuoti ir aprašyti užduočių – objektų poras
+    - Identifikuoti veikėjų poreikius (jie identifikuojami, atsižvelgiant į einamos ir siūlomos sistemų skirtumus)
+    - Sujungti ir patikrinti veikėjų reikalavimus
 
-**Naudojamumo apraše** yra:
+<br>
 
-- Sistemos naudojimo siekiai
-- Sistemos reikalavimų specifikacija
-- Naudotojo reikalavimai
-- Galimi sėkmės kriterijai
+- Kiekvienas **naudojamumo tikslas** turi savo sėkmės kriterijų. **Sėkmės kriterijus** turi būti taip nustatomas, kad juos galima būtų matuoti naudojant naudotojų apklausą, stebint naudotojus arba laboratoriniame eksperimente.
+- Naudojamumo tikslai yra nustatomi skirtingiems naudojimo etapams, pvz:
+    - Sistemos diegimas
+    - Apmokymas
+    - Ribotas naudojimas
+    - Pilnas naudojimas
+- **Vertinimų kriterijų** pvz.:
+    – klavišų paspaudimo kiekis,
+    – naudojamų komandų kiekis,
+    – naudotojo atliekamų veiksmų kiekis,
+    – klavišo paspaudimo, komandos rinkimo, užduočių atlikimo
+    trukmė,
+    – laikas, reikalingas išmokti komandų aibę,
+    – įsimintų komandų kiekis,
+    – sistemos naudojimo žinios,
+    – paramos medžiagos prieinamumas,
+    – poligrafinės ir suvokimo klaidos,
+    – laikas, reikalingas atstatyti klaidingus veiksmus.
 
-**Sociotechniniai modeliai** nagrinėja kartu technines, socialines ir organizacines problemas bei žmogiškuosius projektavimo aspektus.
+<br>
 
-Populiariausi modeliai:
-
-- CUSTOM (User Skills and Task Match)
-- OSTA (Open System Task Analysis)
-- ETHICS (effective Technical and Human Implementation of Computer Systems)
-
-**CUSTOM** veiklos:
-
-- Aprašyti organizacijos kontekstą (tikslus,charakteristikas, politinį ir ekonominį pagrindą ir t.t.)
-- Identifikuoti ir aprašyti organizacijos veikėjus (pirminius, antrinius, tretinius, aptarnaujančiuosius)
-- Identifikuoti ir aprašyti darbo grupes
-- Identifikuoti ir aprašyti užduočių – objektų poras
-- Identifikuoti veikėjų poreikius (jie identifikuojami, atsižvelgiant į einamos ir siūlomos sistemų skirtumus)
-- Sujungti ir patikrinti veikėjų reikalavimus
-
-Kiekvienas **naudojamumo tikslas** turi savo sėkmės kriterijų. **Sėkmės kriterijus** turi būti taip nustatomas, kad juos galima būtų matuoti naudojant naudotojų apklausą, stebint naudotojus arba laboratoriniame eksperimente.
-
-Naudojamumo tikslai yra nustatomi skirtingiems naudojimo etapams, pvz:
-
-- Sistemos diegimas
-- Apmokymas
-- Ribotas naudojimas
-- Pilnas naudojimas
-
-**Vertinimų kriterijų** pvz.:
-
-– klavišų paspaudimo kiekis,
-– naudojamų komandų kiekis,
-– naudotojo atliekamų veiksmų kiekis,
-– klavišo paspaudimo, komandos rinkimo, užduočių atlikimo
-trukmė,
-– laikas, reikalingas išmokti komandų aibę,
-– įsimintų komandų kiekis,
-– sistemos naudojimo žinios,
-– paramos medžiagos prieinamumas,
-– poligrafinės ir suvokimo klaidos,
-– laikas, reikalingas atstatyti klaidingus veiksmus.
-
-**Dix&#39;o panaudojimo principus** galima dalinti į 3 grupes:
-
-1. mokymosi rėmimas (kaip greitai naujokai išmoksta sistemą),
-2. lankstumas (naudotojo ir sistemos apsikeitimo informacija būdai)
-3. robastiškumas (naudotojo rėmimo laipsnis, nustatant sėkmingą sistemosnaudojimą ir tikslų įvertinimą)
-
-
-**Dix&#39;o panaudojimo principai**
-
-- Išmokomumas
-  - Nuspėjamumas
-  - Sintezavimas
-  - Atpažįstamumas
-  - Apibendrinimas
-- Darna
-  - Vienos sistemos ribose
-  - Darbo aplinkoje
-  - Metaforų darna
-- Lankstumas
-  - Dialogo iniciatyva
-  - Daugiagijiškumas
-  - Užduočių perkeliamumas
-  - Pakeičiamumas
-  - Pritaikomumas
-- Natūralumas
-- Neperteklumas
-- Parama
-- Draugiškumas
-  - Matomumas
-  - Atstatomumas
-  - Grįžtamasis ryšys
-  - Užduočių patvirtinimas
-- Paprastumas
-- Estetinis patrauklumas ir malonumas
-- Portabilumas
+- **Dix&#39;o panaudojimo principus** galima dalinti į 3 grupes:
+    1. mokymosi rėmimas (kaip greitai naujokai išmoksta sistemą),
+    2. lankstumas (naudotojo ir sistemos apsikeitimo informacija būdai)
+    3. robastiškumas (naudotojo rėmimo laipsnis, nustatant sėkmingą sistemosnaudojimą ir tikslų įvertinimą)
+- **Dix&#39;o panaudojimo principai**
+    - Išmokomumas
+        - Nuspėjamumas
+        - Sintezavimas
+        - Atpažįstamumas
+        - Apibendrinimas
+    - Darna
+        - Vienos sistemos ribose
+        - Darbo aplinkoje
+        - Metaforų darna
+    - Lankstumas
+        - Dialogo iniciatyva
+        - Daugiagijiškumas
+        - Užduočių perkeliamumas
+        - Pakeičiamumas
+        - Pritaikomumas
+    - Natūralumas
+    - Neperteklumas
+    - Parama
+    - Draugiškumas
+        - Matomumas
+        - Atstatomumas
+        - Grįžtamasis ryšys
+        - Užduočių patvirtinimas
+    - Paprastumas
+    - Estetinis patrauklumas ir malonumas
+    - Portabilumas
 
 # Euristinis vertinimas
-
-Nielseno euristikos:
-
-1. Sistemos būsenos matomumas - Kiek yra grįžtamojo ryšio
-
-2. Sistemos atitikimai realybei - UI turi atitikti elgesio įpročius, prasmingi mygtukų užrašai, žmogiškai pateikta, neklaidinanti informacija
-
-3. Laisvė kontroliuoti sistemą - pvz.: undo, back mygtukai
-
-4. Vadovaukitės standartais ir užtikrinkite sistemos stabilumą
-
-5. Klaidų prevencija
-
-6. Atpažinimas geriau negu atsiminimas
-
-7. Sistemos efektyvumas ir lankstumas - įprastiem naudotojams advanced funkcijos paslėptos
-
-8. Estetiškas ir minimalistinis dizainas
-
-9. Efektyvus klaidų valdymas
-
-10. Pagalba ir dokumentacija
+- **Nielseno euristikos**:
+    1. Sistemos būsenos matomumas *- Kiek yra grįžtamojo ryšio*
+    2. Sistemos atitikimai realybei *- UI turi atitikti elgesio įpročius, prasmingi mygtukų užrašai, žmogiškai pateikta, neklaidinanti informacija*
+    3. Laisvė kontroliuoti sistemą *- pvz.: undo, back mygtukai*
+    4. Vadovaukitės standartais ir užtikrinkite sistemos stabilumą
+    5. Klaidų prevencija
+    6. Atpažinimas geriau negu atsiminimas
+    7. Sistemos efektyvumas ir lankstumas *- įprastiem naudotojams advanced funkcijos paslėptos*
+    8. Estetiškas ir minimalistinis dizainas
+    9. Efektyvus klaidų valdymas
+    10. Pagalba ir dokumentacija
 
