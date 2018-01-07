@@ -63,6 +63,11 @@
     4. Dėvimos technologijos
     5. Papildyta realybė
 
+<hr>
+
+10. **HCI svarba**:
+    - Kelios sekundės gali būti lemtingos - ar naudotojui patiks UX, ar išeis iš puslapio/aplikacijos ir niekada negrįš.
+
 # UXD ir UID
 
 1. **User experience design (UXD)** - naudotojų pasitenkinimo ir ištikimybės produktui pagerinimo procesas tobulinant: 
@@ -117,6 +122,17 @@
     - Suteikia pirkėjui daugiau **savarankiškumo**
     - Sustiprina organizacijos **įvaizdį**.
 
+<hr>
+
+8. **UI** praeitis:
+    - Kazkas
+9. **2018m. trends:**
+    - **VR**
+    - **AR**
+    - 
+10. **UI** ateitis:
+    - Kazkas
+
 # 3. Naudotojų tyrimo metodai. Personos
 
 - Informacija, duomenys – kokybiniai ir kiekybiniai
@@ -156,9 +172,9 @@ Socialinių tinklų analizė yra analizė, kuriai yra naudojami socialiniai tink
 
 Tai yra lengvai prieinamas ir labai galingas įrankis. Vien naudojant Twitter&#39;į galima sužinoti apie savo sekėjus: kas labiausiai patiko tavo sekėjams, kuri informacija buvo labiausiai peržvelgta. Facebook&#39;as aprašo netgi demografinę ataskaitą: puslapio sekėjų lytis, amžių ir t.t.. Youtube aprašo iš kur žiūrimi video ir t.t.. Stipriausia Google Analytics.
 
-Iš šių duomenų galima kurti didžiulį kiekį personų, bet svarbiausia: sugrupuoti pagrindines tendencijas, ar tai kas atrodo svarbu ir sukompiliuoti tai į atitinkamas personas. Svarbiau kokybė nei kokybė.
+Iš šių duomenų galima kurti didžiulį kiekį personų, bet svarbiausia: sugrupuoti pagrindines tendencijas, ar tai kas atrodo svarbu ir sukompiliuoti tai į atitinkamas personas.
 
-Taip pat, nebūtinai reikia peržvelgti reikia esamus klientus, bet svarbu taip pat peržvelgti savo praeities klientus, kad žinoti ką jie pirkdavo, kodėl jie nebėra klientai ir t.t.
+Taip pat, nebūtinai reikia peržvelgti esamus klientus, bet svarbu taip pat peržvelgti savo praeities klientus, kad žinoti ką jie pirkdavo, kodėl jie nebėra klientai ir t.t.
 
 ## Personos
 
