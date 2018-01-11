@@ -358,6 +358,30 @@ tam tikrame kontekste.
 
 ## Agile
 
+- **Agile software development** describes a set of values and principles for software development under which requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams.[1] It advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change.[2] These principles support the definition and continuing evolution of many software development methods.[3]
+- **MVP (Minimum Viable Product)** - Minimalus produktas, kuriuo bandoma patikrinti ar identifikuota problema verta sprendimo.
+- **RAT (Riskiest Assumption Test)** - Siekiama per kuo mažiau laiko išmokti kuo daugiau.
+
+### Extreme Programming (XP)
+
+- The methodology takes its name from the idea that the beneficial elements of traditional software engineering practices are taken to "extreme" levels. As an example, code reviews are considered a beneficial practice; taken to the extreme, code can be reviewed continuously, i.e. the practice of pair programming.
+
+### Scrum
+
+
+- Dokumentas, kuriame kaupiamos prioritetizuotos nepradėtos bei nebaigtos užduotys (living backlog).
+- Sprintai – trumpos iteracijos, kurių kiekvienoje užbaigiamos kelios stambios užduotys.
+- Kasdieniai scrumai – trumpi susirinkimai, kurių metu kiekvienas grupės narys pasako, ką per dieną nuveikė ir ką planuoja daryti toliau.
+- Planavimo sesijos, kurių metu išrenkamos užduotys tolesniam sprintui ir priskiriamos grupės nariams.
+- Sprinto pabaigos susitikimai, kurių metu analizuojama praėjusio sprinto patirtis, kaip ir kodėl užduočių laiko įverčiai skyrėsi nuo realiai prie jų praleisto laiko.
+- Sprinto demonstracijos, kurių metu komandos viena kitai parodo pasibaigusio sprinto metu užbaigtas dalis.
+
+<br>
+
+- **Product owner** - produkto savininkas. Siekia sukurti kuo daugiau vertės.
+- **Development team** - kūrėjų (programuotojų, testuotojų, dizainerių) komanda. Siekia kurti produktą išvengdami perteklinio darbo.
+- **Scrum master** - scrum proceso meistas. Siekia, kad komanda su kuo mažiau vargo sukurtų kuo daugiau vertės.
+
 ---
 
 ## Sluoksnių architektūra
