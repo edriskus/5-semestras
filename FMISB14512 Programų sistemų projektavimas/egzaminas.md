@@ -278,10 +278,27 @@
 - **Komponentas** – tai, ką analizuojame programos veikimo metu; gali būti ir trečių šalių produktas.
 - **Package** - Organizuoja elementus į grupes (patogumo dėlei).
 - **Node** - Fizinė arba virtuali mašina, kurioje veikia programa arba jos dalis. Turi turėti bent procesorių ir atminties resursus.
-
-
+- **Layer** - Izoliuota kodo grupė, pasiekiama tik per tam tikrą interfeisą. „aukštesnis“ sluoksnis gali naudoti tik „žemesnį“ sluoksnį.
+- **Tier** - Sistemos išdalinimo mechanizmas, kur skirtingos dalys gali veikti skirtingose platformose ir net naudoti skirtingas technologijas.
 
 ### Projektavimo abstrakcijų lygiai
+
+- **Idioma** - Plačiai pripažįstama ir naudojama konvencija konkrečioje programavimo kalboje.
+- **Design pattern** - Bendras, gerai žinomas sprendimas 
+konkrečiai problemai 
+tam tikrame kontekste.
+- **Framework** - Konkrečiai probleminei sričiai sukurtas klasių rinkinys (realizuotas dalinis sprendimas), skirtas naudojimui / pritaikymui.
+- **Plėtros taškai** (Extension Points) – projekte numatytos vietos pridėti papildomiems elementams.
+- **Architectural pattern** - Daug platesnė apimtis nei projektavimo šablonai; paprastai realizuojama naudojant daug komponentų.
+- Tipinės architektūros (**Reference architectures**) - „Žanras“, t.y., Visuotinai žinomas visos architektūros šablonas.
+- **Projektavimo abstrakcijos lygiai:**
+    1. Tipinės architektūros (bendras visos sistemos apibūdinimas).
+    1. Architektūriniai šablonai (aukšto lygio struktūriniai sprendimai).
+    1. Stambiausios komponentų grupės (sluoksniai, platformos, karkasai, bibliotekos).
+    1. Abstrakcijų grupės (moduliai / komponentai). 
+    1. Abstrakcijos bei algoritmai, išreikšti objektų tarpusavio sąveikomis. Projektavimo šablonai.
+    1. Elgsenos grupavimas į abstrakcijas (funkcionalumas, enkapsuliuojamas klasėse)
+    1. Algoritmai - išreiškiami programavimo kalba, pritaikomos idiomos
 
 ### Architekturos vertinimas
 
