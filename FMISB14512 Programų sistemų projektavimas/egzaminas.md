@@ -200,6 +200,58 @@
 
 ## Kodo testavimas (Unit Testing) ir jo įtaka projektavimui
 
+### Unit testing
+
+-*A unit test is an automated piece of code that invokes a unit of work in the system and then checks a single assumption about the behavior of that unit of work.*
+- **Regression** - Funkcionalumas, kuris veikė prieš tai - nebeveikia. 
+- Unit testai turi būti:
+    - Greiti
+    - Patikimi
+    - Tikslūs
+    - Lengvai skaitomi ir rašomi
+- Struktūra (rekomenduojama):
+    - Arrange - paruošimas
+    - Act - vykdymas
+    - Assert - tikrinimas
+- **Dažnos ydos:**
+    - Testai rašomi vėliau negu kodas.
+    - Testus rašo ne kodo autorius.
+    - Testų rašymas perleidžiamas testuotojams (“nes jie gi testuotojai”).
+    - Testų kodui skiriamas nepakankamas dėmesys.
+    - Testai priklauso vieni nuo kitų
+    - Viename teste tikrinami keli skirtingi atvejai
+
+### Projektavimo įtaka testuojamumui / Testavimo įtaka projektavimui
+
+- *Esminė problema - blogai suprojektuotos klasės apsunkina testavimą.*
+- Kaip to išvengti:
+    - Naudoti DI (Dependency Injection)
+        - **Dependency injection** - projektavimo šablonas kuris įgyvendina “dependency inversion” principą (SOLID).  
+        - Objektas gauna visus reikalingus objektus (priklausomus objektus, “priklausomybes”) per konfigūraciją (konstruktoriuje)
+    - Dirbti su interfeisais
+    - Vengti sudėtingų statinių metodų
+
+### Mocking
+
+- *Objektai, simuliuojantys “tikrų objektų” elgesį.*
+- *Priklausomybių eliminavimas/imitavimas*
+- Privalumai:
+    - Sparta
+    - Patikimumas
+    - Skaitomumas
+
+### TDD
+
+- *Test driven development*
+1. Parašyti ir paleisti neveikiantį test’ą.
+2. Implementuoti tiek, kad testai veiktų.
+3. Refaktorinti kodą, gerinti kodo kokybę
+
+- Teisingai taikant TDD praktikas unit testai tampa detaliomis specifikacijomis, kurios sukurtos kaip tik laiku.
+- Programuotojai tipiškai yra linkę dirbti su kodu, o ne su dokumentacija.
+- Bandant suprasti klasę ar metodą pirmiausiai programuotojai žiūrės į kodo pavyzdžius, kurie kviečia metodus.
+- Testai sukurti kaip specifikacijos daro būtent tai!
+
 ---
 
 ## Išankstinis projektavimas (upfront design)
