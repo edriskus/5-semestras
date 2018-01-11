@@ -256,6 +256,15 @@
 
 ## Išankstinis projektavimas (upfront design)
 
+- **In a nutshell:**
+    - Taikomas tada, kai reikia bendros architektūrinės vizijos
+    - Siekia įgyvendinti kokybinius atributus sutarta svarbos tvarka
+    - Taikomas tiek, kol projektinės rizikos sumažėja iki norimo lygio
+    - Sprendimai aprašomi sutartu standartu
+    - Taktiniai sprendimai paliekami emergent design projektavimui
+
+<br>
+
 - *Didelėms, sudėtingoms, rizikingoms sistemoms realizuoti būtinas išankstinis planas.*
 1. Geras detalus apgalvojimas projektavimo fazėje tekainuoja kelias valandas, bet gali sutaupyti mėnesius.
 2. Sistemos dizainą (brėžinius, specifikacijas) lengviau suvokti ir analizuoti negu patį kodą.
@@ -302,9 +311,48 @@ tam tikrame kontekste.
 
 ### Architekturos vertinimas
 
+- **Gera arch** - Tokia, kuri užtikrina norimas sistemos kokybes:
+    - palengvina iškeltų tikslų pasiekimą
+    - įgalina ateities evoliuciją numatytomis kryptimis 
+- **Bloga arch** - Tokia, kuri neužtikrina norimų sistemos kokybių:
+    - apsunkina iškeltų tikslų pasiekimą
+    - apsunkina ateities evoliuciją numatytomis kryptimis 
+- Priežastys:
+    - Nereikalingas funkcionalumas
+    - Perteklinis sudėtingumas
+- *Kaip mažiausiomis pastangomis pasiekti “gerą architektūrą”?*
+    - Tipinės architektūros - žinomas, pasiteisinęs bendras sprendimas visai sistemai
+    - Architektūriniai šablonai - žinomi, pasiteisinę aukšto lygio struktūriniai sprendiniai
+    - Projektavimo šablonai - žinomi, pasiteisinę klasių lygio struktūriniai sprendiniai
+    - Švarus kodas, OOP koncepcijos, OOD principai - kodo lygio organizavimo sprendimai
+    - Asmeninė patirtis
+
 ### Išankstinis sistemų projektavimas
 
+- **Pradžia**:
+    - Verslo misija ir esminis poreikis. *Svarbiausios prielaidos*
+    - Ribojimai:
+        - Architektūriškai svarbūs reikalavimai (Architecturally significant requirements, ASR)
+        - Nefunkciniai reikalavimai
+        - Patys svarbiausi funkciniai reikalavimai
+    - Prioritetai
+- **Kompromisai:** iekvieno kokybinio atributo realizavimas neigiamai veikia kitus kokybinius atributus.
+- **Kokybiniai atributai** privalo būti išmatuojami ir tiksliai skaitiškai įvertinami
+
 ### Projektinių sprendimų dokumentavimas
+
+- Dokumentacijos **tikslai**:
+    - Komunikacinis: fiksuojami susitarimai tarp šalių (programuotojų, testuotojų, skirtingų komandų ir t.t.)
+    - Edukacinis: naujų projekto narių supažindinimui su sistema 
+    - Sistemos architektūros analizei.
+- Dokumentacijos **problemos**:
+    - Atotrūkis nuo tikro, veikiančio kodo
+    - Atsilikimas laikui bėgant (labai trumpas “galiojimo laikas”)
+- *Svarbu vadovautis pragmatiškumo principu: ar dokumentavimo pastangos atsipirks?*
+- Dokumentavimo perspektyvos (**viewtypes**):
+    - Programinių modulių aprašymai (implementation time)
+    - Sistemos elementų elgsenos ir interakcijų aprašymai (runtime; component-and-connectors)
+    - Diegimo aprašymai (allocation)
 
 ---
 
