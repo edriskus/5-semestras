@@ -450,6 +450,42 @@ Reikėtų pasirūpinti, kad nenukentėtų vartotojo lūkesčiai
 
 ## Modern Front End applications
 
+- **HTML5:**
+    - Geolocation
+    - Drag and Drop
+    - Local Storage
+    - Application Cache
+    - Web Workers
+    - SSE
+    - Service Workers
+- **CSS3:**
+    - Animations
+    - Gradients
+    - Flexbox
+    - Box-model
+    - Media queries
+- **SASS:**
+    - Variables
+    - Nesting
+    - Extend/inherit
+- **EcmaScript**
+    - 2009m. (ES5)
+    - ES2015 (ES6) - class, iterator, generator, arrow fn, modules, etc..
+    - ES2016 (ES7)
+    - ES8+++
+- **Node v9+**
+- **Angular 5.2.0** - TypeScript
+- **Vue** - JS
+- **React** - JSX
+- **Testing:**
+    - Mocha
+    - Karma
+    - Jasmine
+- **Building**
+    - Rollup
+    - Browserify
+    - Webpack
+
 ---
 
 ## Nuolatinis integravimas
