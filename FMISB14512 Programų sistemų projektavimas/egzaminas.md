@@ -386,6 +386,66 @@ tam tikrame kontekste.
 
 ## Sluoksnių architektūra
 
+- Principai:
+    - Interesų atskirimas skirtinguose sluoksniuose (separation of concerns)
+        - Sluoksnyje saugoma logika skirta tik tam sluoksniui
+    - Sluoksnių izoliacija (layers of isolation)
+        - Įgalina refaktorinimą sluoksniuose
+        - Sliuoksnių implementacijos keitimą (prezentacijos bibliotekos / duombazes keitimas)
+- **Dalykinės srities modelis** - organizuotas ir struktūrizuotas problemos suvokimas/žinojimas
+
+<br>
+
+
+- **DAO** (Data Access Object) - Objektas, kuris suteikia abstrakčią sąsaja komunikuoti su duomenų baze ar kitu duomenų saugojimo mechanizmu (pvz. failu). Leidžiamos duomenų operacijos nesigilinant į duomenų saugojimo detales.
+- Privalumai:
+    - Verslo logikos atskyrimas nuo duomenų saugojimo.
+    - Patogu naudoti kartu su ORM karkasais
+    - Pernaudojamos CRUD operacijos igyvendinant abstraktų DAO.
+- Trūkumai:
+    - Kodo dublikacija
+    - Nėra motyvacijos parašyti naują efektyvesnę užklausą, jei galima lengvai perpanaudoti vieną ar kelias esamas. 
+    - Operavimas “pilnais” objektais, net kai to visai nereikia.
+
+<br>
+
+- **ORM** (Object Relational Mapping) - ORM programavimo technika, skirta konvertuoti duomenis tarp reliacinės duomenų bazės ir objektiškai orientuotos programavimo kalbos.
+- Privalumai:
+    - Įgalina įgyvendinti domain model šabloną.
+    - Sumažėja daug kodo, skirto darbui su DB.
+    - Pakeitimai objektų modelyje atliekami vienoje vietoje.
+    - Objektiškai orientuotos užklausos.
+    - Navigacija - susiję įrašai užkraunami to pareikalavus kode.
+    - Palaikoma lygiagretumas, duomenų kešavimas (cache) ir transakcijų valdymas.
+- Trūkumai:
+    - Nukenčia sparta
+    - Mažesnis dėmesys į SQL užklausas
+    - Tam tikras sudėtingumas norint parašyti labai sudėtingas užklausas
+
+<br>
+
+- Strategijos, kaip suvaldyti lygiagrečius procesus - **“concurrency”**.
+- **Optimistinis rakinimas** - gerai, kai tikimybė, jog tai nutiks yra nedidelė.
+Reikėtų pasirūpinti, kad nenukentėtų vartotojo lūkesčiai
+- **Pesimistinis rakinimas** - tinka, kai tikimybė, jog tai nutiks yra didelė. Didelė tikimybė, kad nukentės aplikacijos sparta
+- **Paskutinė užklausa laimi.** Reikia suprasti reikalavimus ir vartotojų lūkesčius.
+
+<br>
+
+- **MVC** (Model View Controller)
+- Modelis (**model**) - objektas, kuris atspindi tam tikrą domeno informaciją (Domain model, Transaction script). 
+- Atvaizdavimas (**View**) - skirtas modelio duomenų atvaizdavimui vartotojo sąsajoje. 
+- Valdytojas (**Controller**) - priima vartotojo įvestą informaciją, perduoda ją modeliui ir grąžina apdorotus duomenis atgal atvaizdavimui.
+
+<br>
+
+- **REST** - HTTP paremtas API
+    - Atskirti klientas ir serveris (duomenų atvaizdavimas vs išsaugojimas)
+    - Vienoda sąsaja
+    - Būsenos eliminacija tarp sąveikų
+    - Kešuojamas
+    - Sluoksniuota sistema
+
 ---
 
 ## Modern Front End applications
