@@ -256,6 +256,39 @@
 
 ## Išankstinis projektavimas (upfront design)
 
+- *Didelėms, sudėtingoms, rizikingoms sistemoms realizuoti būtinas išankstinis planas.*
+1. Geras detalus apgalvojimas projektavimo fazėje tekainuoja kelias valandas, bet gali sutaupyti mėnesius.
+2. Sistemos dizainą (brėžinius, specifikacijas) lengviau suvokti ir analizuoti negu patį kodą.
+3. Labiausiai patyrę profesionalai turėtų projektuoti sistemą, o jaunesni – tiksliai realizuoti pagal specifikacijas
+- **YAGNI** - *you aren't gonna need it* - Žmonės yra linkę apsidrausti nuo galimų nemalonumų, todėl projektuodami informacines sistemas siekia pridėti **galimai** ateityje praversiančių savybių.
+
+<br>
+
+- Išankstinis planavimas reikalingas, tačiau detalus išankstinis planavimas **labiau kenkia nei padeda**. (Agile projektai sėkmingesni)
+- Išankstinis projektavimas turi siekti **svarbiausių, kritinių kokybių užtikrinimo**.
+- **Nekritinės** sistemos dalys geriausiai pavyksta emergent projektavimo būdu.
+
+### Kodo organizavimo lygiai
+
+- **Paprogramė, funkcija, procedūra, metodas** - Programos dalis - programinių instrukcijų seka, turinti identifikatorių, kuriuo ją galima iškviesti. 
+- **Klasė** - „aprašas objektams gaminti“. Abstrakcija, susidedanti iš būsenos ir elgsenos (metodų).
+- **Objektas** – „klasės egzempliorius“
+- Moduliai ir komponentai yra „sistemos elementai su aiškia apibrėžta riba ir interfeisu“.
+- **Modulis** – tai, ką projektuojame; pvz., klasė, klasių grupė, sluoksnis ir t.t.
+- **Komponentas** – tai, ką analizuojame programos veikimo metu; gali būti ir trečių šalių produktas.
+- **Package** - Organizuoja elementus į grupes (patogumo dėlei).
+- **Node** - Fizinė arba virtuali mašina, kurioje veikia programa arba jos dalis. Turi turėti bent procesorių ir atminties resursus.
+
+
+
+### Projektavimo abstrakcijų lygiai
+
+### Architekturos vertinimas
+
+### Išankstinis sistemų projektavimas
+
+### Projektinių sprendimų dokumentavimas
+
 ---
 
 ## Agile
