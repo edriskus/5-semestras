@@ -1,5 +1,34 @@
 # Programų sistemų projektavimas
 
+- [Įvadas](#%C4%AFvadas)
+- [Kokybiškas programinis kodas. Refaktoringas](#kokybi%C5%A1kas-programinis-kodas-refaktoringas)
+    - [Kaip programinio kodo kokybė siejasi su dizaino kokybe?](#kaip-programinio-kodo-kokyb%C4%97-siejasi-su-dizaino-kokybe)
+    - [Švaraus programinio kodo taisyklės](#%C5%A1varaus-programinio-kodo-taisykl%C4%97s)
+- [Objektiškai orientuoto projektavimo principai](#objekti%C5%A1kai-orientuoto-projektavimo-principai)
+    - [Pagrindinės OO koncepcijos](#pagrindin%C4%97s-oo-koncepcijos)
+    - [Pagrindinės OO metrikos](#pagrindin%C4%97s-oo-metrikos)
+    - [Pagrindiniai OOD principai (SOLID)](#pagrindiniai-ood-principai-solid)
+- [Projektavimo šablonai (Design Patterns)](#projektavimo-%C5%A1ablonai-design-patterns)
+- [Kodo testavimas (Unit Testing) ir jo įtaka projektavimui](#kodo-testavimas-unit-testing-ir-jo-%C4%AFtaka-projektavimui)
+    - [Unit testing](#unit-testing)
+    - [Projektavimo įtaka testuojamumui / Testavimo įtaka projektavimui](#projektavimo-%C4%AFtaka-testuojamumui-testavimo-%C4%AFtaka-projektavimui)
+    - [Mocking](#mocking)
+    - [TDD](#tdd)
+- [Išankstinis projektavimas (upfront design)](#i%C5%A1ankstinis-projektavimas-upfront-design)
+    - [Kodo organizavimo lygiai](#kodo-organizavimo-lygiai)
+    - [Projektavimo abstrakcijų lygiai](#projektavimo-abstrakcij%C5%B3-lygiai)
+    - [Architekturos vertinimas](#architekturos-vertinimas)
+    - [Išankstinis sistemų projektavimas](#i%C5%A1ankstinis-sistem%C5%B3-projektavimas)
+    - [Projektinių sprendimų dokumentavimas](#projektini%C5%B3-sprendim%C5%B3-dokumentavimas)
+- [Agile](#agile)
+    - [Extreme Programming (XP)](#extreme-programming-xp)
+    - [Scrum](#scrum)
+- [Sluoksnių architektūra](#sluoksni%C5%B3-architekt%C5%ABra)
+- [Modern Front End applications](#modern-front-end-applications)
+- [Nuolatinis integravimas](#nuolatinis-integravimas)
+    - [CI](#ci)
+    - [CD](#cd)
+
 ## Įvadas
 
 - Programinės įrangos **iššūkiai**:
@@ -489,5 +518,78 @@ Reikėtų pasirūpinti, kad nenukentėtų vartotojo lūkesčiai
 ---
 
 ## Nuolatinis integravimas
+
+- Continuous Integration / Continuous Delivery
+- **Anti-patterns**:
+    - Programinės įrangos diegimas **rankiniu būdu**
+        - Nepastovios diegimo procedūros
+        - Dažni versijų atstatymai (roll back) 
+        - Po išleidimo nebeveikianti produkcijos (production) aplinka
+        - Priklausomybė nuo kelių žmonių, žinančių diegimo procesą
+        - Žmogiškos klaidos: kažkas pamirštama padaryti ar padaroma klaidingai 
+    - Diegimas vykdomas tik **pabaigus visus programavimo darbus**
+        - Pasiliekama per mažai laiko susikonfiguruoti aplinkas ir procesus
+        - Testavimas daromas lokaliuose kompiuteriuose
+        - Dažnai produkcijos aplinka skiriasi nuo lokalius, dėl ko per vėlai pamatomos įgyvendinimo klaidos. Kuo ilgiau tęsiasi programavimas, tuo būna sunkiau jas pataisyti. 
+        - Pvz. programuojama ant Windows OS, o diegiama į Linux serverius (failų pavadinimų klaidos)
+    - Rankinis **konfigūracijų tvarkymas**
+        - Sistema tinkamai veikia testinėje aplinkoje, bet “lūžta” produkcinėje
+        - Sistemų administratoriai ilgai užtrunka paruošti naują aplinką
+        - Negalima lengvai grįžti prie anksčiau veikusios konfigūracijos
+
+### CI
+
+- Tai tokia programavimo praktika, kurios metu stengiamasi integruoti komandos parašytą kodą kaip įmanoma dažniau (bent kelis kartus per dieną)
+- Reikalavimai
+    - Reguliarus kodo įtraukimas į versijavimo sistemą ( Check in regularly)
+    - Visapusiškai automatizuoti testai
+    - Trumpas konstravimo ir testavimo procesas
+    - Tvarkinga programavimo aplinka
+- Esminės **praktikos:**
+    - Neįtraukti neveikiančio / konstravimą griaunančio kodo
+    - Prieš einant namo nepalikti neveikiančio build’o
+    - Automatizuotų testų leidimas prieš įtraukiant kodą į versijavimo repozitoriją
+    - Prieš pradedant naują užduotį palaukti, kol baigs vykdytis testų leidimas
+    - Limituoti laiką, skirtą sistemos sutvarkymui prieš revizijos atstatymą
+    - Visą laiką būti pasiruošusiam grąžinti sistemą į prieš tai buvusią reviziją
+    - Neišjunginėti neveikiančių testų
+    - Prisiimti atsakomybę dėl nugriautos sistemos
+    - Test driven development (TDD)
+- **Įrankiai:**
+    - Teamcity
+    - Jenkins
+    - Team Foundation Server
+    - Bamboo
+    - Travis
+- **Deployment pipeline** - Etapais išskaidytas ir automatizuotas procesas, kuris padeda kodui pasiekti galutinį vartotoją
+- Etapai:
+    - **Kodo** - įvertina, kad sistema veikia techniniam lygmenyje (kompiliuojasi, veikia unit testai, praeina statinę analizę)
+    - **Automatizuotų priėmimo (acceptance) testų** - įvertina, kad sistema veikia funkciniame ir nefunkciniame lygmenyje, veikimas atitinka reikalavimus
+    - **Rankinio testavimo** - įvertinama sistemos naudingumas vartotojui, patikrinama, ar nėra klaidų, kurios buvo nerastos automatizuotų testų
+    - **Išleidimo** - sistema įdiegama į vartotojui pasiekiamą aplinką
+- **Building** - programinės įrangos konstravimas
+- **Build tools:** Make (c), Apache Ant (any language), Gradle (Java, Android), Apache Maven (Java), MSBuild (.net), Rake (ruby), Phing (php), Grunt (Javascript), Gulp (Javascript)
+- **Tipiniai veiksmai**:
+    - Kodo kompiliavimas
+    - Failų / resursų paruošimas
+    - Pakavimas
+    - Konfigūracijos paruošimas
+    - Automatizuotų testų leidimas
+
+### CD
+
+- *Programinės įrangos kūrimo principas, kurio metu komandos kuria vertingą funkcionalumą trumpomis iteracijomis ir jis iškart gali būti išleistas vartotojams*
+- Nauda:
+    - Pagreitinti išleidimai
+    - Greitesnis grįžtamasis ryšys iš vartotojų
+    - Mažiau klaidų, o esamos ištaisomos greičiau
+- **Funkcionalumo jungikliai** (Feature Toggling): Skirti įjungti / išjungti tam tikrą funkcionalumą
+- **Monitoring**: 
+    - Automatiniai įspėjimai (email, sms, chat, dashboard)
+    - Anomalijų radimas
+    - Profiliavimas (profiling)
+    - Vartotojų stebėsena (google analytics)
+- Vienas populersnių įrankių šiai dienai ELK (elastic + logstash + kibana)
+
 
 ---
